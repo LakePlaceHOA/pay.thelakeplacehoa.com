@@ -31,7 +31,15 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      background: var(--bg);
+
+      /* Lake background (same style as dues) */
+      background:
+        linear-gradient(rgba(243,246,250,.65), rgba(243,246,250,.65)),
+        url("/assets/lake-bg.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
       padding: 44px 18px 30px;
       display:flex;
       justify-content:center;
@@ -41,6 +49,20 @@
     a:hover{text-decoration:underline}
 
     .wrap{width:100%;max-width:1050px}
+
+    /* Big frosted panel wrapper (same idea as dues) */
+    .content-panel{
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(229,231,235,0.9);
+      border-radius: 22px;
+      padding: 36px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 520px){
+      .content-panel{ padding: 22px; }
+    }
 
     /* Header */
     .top{margin-bottom:18px}
@@ -190,99 +212,103 @@
 
 <body>
   <main class="wrap" role="main">
-    <header class="top">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">🏘️</div>
-        <div>
-          <h1>Decks &amp; Railings Special Assessment</h1>
-          <div class="subtitle">
-            Choose your payment method below. You will be redirected to Stripe’s secure checkout.
-          </div>
+    <div class="content-panel">
 
-          <div class="chiprow" aria-label="Helpful notes">
-            <div class="chip">Unit number required at checkout</div>
-            <div class="chip">Debit/prepaid cards not accepted online</div>
-            <div class="chip">Need help? <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a></div>
+      <header class="top">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">🏘️</div>
+          <div>
+            <h1>Decks &amp; Railings Special Assessment</h1>
+            <div class="subtitle">
+              Choose your payment method below. You will be redirected to Stripe’s secure checkout.
+            </div>
+
+            <div class="chiprow" aria-label="Helpful notes">
+              <div class="chip">Unit number required at checkout</div>
+              <div class="chip">Debit/prepaid cards not accepted online</div>
+              <div class="chip">Need help? <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a></div>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <section class="notice" aria-label="Fee transparency notice">
-      <p><strong>Fee Transparency:</strong> Any amount above the HOA’s intended net amount covers <strong>third-party processing fees</strong> charged by Stripe and/or payment networks. These processing fees are not retained by Lake Place HOA.</p>
-      <p><strong>Debit/prepaid cards are not accepted online.</strong> Please use a credit card, ACH, or check.</p>
-      <p><strong>Pay by check with no fee:</strong> Make checks payable to <strong>Lake Place HOA</strong> and mail to <em>116 Lake Place Condo Dr, Elizabethtown, NC 28337</em>.</p>
-    </section>
+      <section class="notice" aria-label="Fee transparency notice">
+        <p><strong>Fee Transparency:</strong> Any amount above the HOA’s intended net amount covers <strong>third-party processing fees</strong> charged by Stripe and/or payment networks. These processing fees are not retained by Lake Place HOA.</p>
+        <p><strong>Debit/prepaid cards are not accepted online.</strong> Please use a credit card, ACH, or check.</p>
+        <p><strong>Pay by check with no fee:</strong> Make checks payable to <strong>Lake Place HOA</strong> and mail to <em>116 Lake Place Condo Dr, Elizabethtown, NC 28337</em>.</p>
+      </section>
 
-    <section class="grid" aria-label="Payment options">
-      <!-- CREDIT CARD COLUMN -->
-      <article class="panel" aria-label="Credit card payments">
-        <div class="tag">💳 <strong>Credit Card</strong> <span>(fees included)</span></div>
-        <h2>Pay by Credit Card</h2>
-        <p>These amounts are set so the HOA receives the intended net amount after Stripe card fees.</p>
+      <section class="grid" aria-label="Payment options">
+        <!-- CREDIT CARD COLUMN -->
+        <article class="panel" aria-label="Credit card payments">
+          <div class="tag">💳 <strong>Credit Card</strong> <span>(fees included)</span></div>
+          <h2>Pay by Credit Card</h2>
+          <p>These amounts are set so the HOA receives the intended net amount after Stripe card fees.</p>
 
-        <a class="btn btn-blue" href="https://buy.stripe.com/eVq9AT6Ky15u7q67l86J205" target="_blank" rel="noopener">
-          <span>Down Payment <small>(Credit Card)</small></span>
-          <span class="right">$1,756.11 →</span>
-        </a>
+          <a class="btn btn-blue" href="https://buy.stripe.com/eVq9AT6Ky15u7q67l86J205" target="_blank" rel="noopener">
+            <span>Down Payment <small>(Credit Card)</small></span>
+            <span class="right">$1,756.11 →</span>
+          </a>
 
-        <a class="btn btn-blue" href="https://buy.stripe.com/6oUcN5b0O9C08ua34S6J207" target="_blank" rel="noopener">
-          <span>Installment Payment <small>(Credit Card)</small></span>
-          <span class="right">$2,006.74 →</span>
-        </a>
+          <a class="btn btn-blue" href="https://buy.stripe.com/6oUcN5b0O9C08ua34S6J207" target="_blank" rel="noopener">
+            <span>Installment Payment <small>(Credit Card)</small></span>
+            <span class="right">$2,006.74 →</span>
+          </a>
 
-        <a class="btn btn-blue" href="https://buy.stripe.com/bJedR95Gug0o9ye20O6J206" target="_blank" rel="noopener">
-          <span>Full Payment <small>(Credit Card)</small></span>
-          <span class="right">$7,775.39 →</span>
-        </a>
+          <a class="btn btn-blue" href="https://buy.stripe.com/bJedR95Gug0o9ye20O6J206" target="_blank" rel="noopener">
+            <span>Full Payment <small>(Credit Card)</small></span>
+            <span class="right">$7,775.39 →</span>
+          </a>
 
-        <p style="margin-top:12px;">
-          <strong>Reminder:</strong> Debit and prepaid cards are blocked. If you try one, the payment will fail after clicking Pay.
-        </p>
-      </article>
+          <p style="margin-top:12px;">
+            <strong>Reminder:</strong> Debit and prepaid cards are blocked. If you try one, the payment will fail after clicking Pay.
+          </p>
+        </article>
 
-      <!-- ACH COLUMN -->
-      <article class="panel" aria-label="ACH payments">
-        <div class="tag">🏦 <strong>Bank (ACH)</strong> <span>(lower processing cost)</span></div>
-        <h2>Pay by Bank Transfer (ACH)</h2>
-        <p>ACH has a lower processing cost and may take a few business days to fully settle.</p>
+        <!-- ACH COLUMN -->
+        <article class="panel" aria-label="ACH payments">
+          <div class="tag">🏦 <strong>Bank (ACH)</strong> <span>(lower processing cost)</span></div>
+          <h2>Pay by Bank Transfer (ACH)</h2>
+          <p>ACH has a lower processing cost and may take a few business days to fully settle.</p>
 
-        <a class="btn btn-green" href="https://buy.stripe.com/dRmdR96Ky5lKaCi5d06J208" target="_blank" rel="noopener">
-          <span>Down Payment <small>(ACH)</small></span>
-          <span class="right">$1,709.88 →</span>
-        </a>
+          <a class="btn btn-green" href="https://buy.stripe.com/dRmdR96Ky5lKaCi5d06J208" target="_blank" rel="noopener">
+            <span>Down Payment <small>(ACH)</small></span>
+            <span class="right">$1,709.88 →</span>
+          </a>
 
-        <a class="btn btn-green" href="https://buy.stripe.com/6oU14nb0O8xWdOu8pc6J20a" target="_blank" rel="noopener">
-          <span>Installment Payment <small>(ACH)</small></span>
-          <span class="right">$1,953.24 →</span>
-        </a>
+          <a class="btn btn-green" href="https://buy.stripe.com/6oU14nb0O8xWdOu8pc6J20a" target="_blank" rel="noopener">
+            <span>Installment Payment <small>(ACH)</small></span>
+            <span class="right">$1,953.24 →</span>
+          </a>
 
-        <a class="btn btn-green" href="https://buy.stripe.com/aFa9ATd8W5lK25M0WK6J209" target="_blank" rel="noopener">
-          <span>Full Payment <small>(ACH)</small></span>
-          <span class="right">$7,554.60 →</span>
-        </a>
+          <a class="btn btn-green" href="https://buy.stripe.com/aFa9ATd8W5lK25M0WK6J209" target="_blank" rel="noopener">
+            <span>Full Payment <small>(ACH)</small></span>
+            <span class="right">$7,554.60 →</span>
+          </a>
 
-        <p style="margin-top:12px;">
-          <strong>Tip:</strong> If a homeowner wants “no fee,” paying by check is always available.
-        </p>
-      </article>
-    </section>
+          <p style="margin-top:12px;">
+            <strong>Tip:</strong> If a homeowner wants “no fee,” paying by check is always available.
+          </p>
+        </article>
+      </section>
 
-    <section class="fineprint" aria-label="Acknowledgement">
-      <div><strong>By proceeding, you acknowledge and agree with the fee transparency statement above and will be redirected to Stripe’s secure payment portal to process your payment.</strong></div>
-      <div style="margin-top:10px;">
-        Questions or corrections? Email <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a>.
-      </div>
-    </section>
+      <section class="fineprint" aria-label="Acknowledgement">
+        <div><strong>By proceeding, you acknowledge and agree with the fee transparency statement above and will be redirected to Stripe’s secure payment portal to process your payment.</strong></div>
+        <div style="margin-top:10px;">
+          Questions or corrections? Email <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a>.
+        </div>
+      </section>
 
-    <footer class="footer">
-      <div>© <span id="yr"></span> Lake Place HOA</div>
-      <div class="mono">Powered by Stripe Checkout</div>
-    </footer>
+      <footer class="footer">
+        <div>© <span id="yr"></span> Lake Place HOA</div>
+        <div class="mono">Powered by Stripe Checkout</div>
+      </footer>
 
-    <script>
-      document.getElementById('yr').textContent = new Date().getFullYear();
-    </script>
+      <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+      </script>
+
+    </div>
   </main>
 </body>
 </html>
