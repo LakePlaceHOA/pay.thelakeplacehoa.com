@@ -36,7 +36,14 @@ background-attachment: fixed;
     }
 
     .wrap{max-width:1000px;width:100%}
-
+.content-panel{
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(229,231,235,0.9);
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
     h1{margin:0;font-size:28px}
     .sub{margin:6px 0 16px;color:var(--muted)}
 
@@ -116,6 +123,7 @@ background-attachment: fixed;
 
 <body>
   <main class="wrap">
+    <div class="content-panel">
     <h1>Quarterly HOA Dues – Secure Online Payment</h1>
     <p class="sub">Choose your preferred method below.</p>
 
@@ -152,6 +160,7 @@ background-attachment: fixed;
     </section>
 
     <footer>© <span id="yr"></span> Lake Place HOA</footer>
+    </div>
   </main>
 
   <script>
