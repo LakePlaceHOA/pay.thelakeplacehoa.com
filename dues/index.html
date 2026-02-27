@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quarterly HOA Dues – Pay Online</title>
+  <meta name="description" content="Secure online payment options for Quarterly HOA dues via Card or ACH." />
+
+  <style>
+    :root{
+      --bg:#f3f6fa;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --blue:#1d4ed8;
+      --green:#16a34a;
+      --ring:#93c5fd;
+      --shadow:0 8px 18px rgba(0,0,0,.06);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      padding:50px 18px 30px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{max-width:1000px;width:100%}
+
+    h1{margin:0;font-size:28px}
+    .sub{margin:6px 0 16px;color:var(--muted)}
+
+    .notice{
+      background:#eef4ff;
+      border-left:4px solid var(--blue);
+      border-radius:12px;
+      padding:16px;
+      margin-bottom:20px;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+
+    @media(min-width:820px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h2{margin:6px 0 8px;font-size:22px}
+    .price{font-size:30px;font-weight:700;margin:6px 0 12px}
+    .desc{color:var(--muted);font-size:14px;line-height:1.5}
+
+    .btn{
+      display:block;
+      text-align:center;
+      width:100%;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      margin-top:14px;
+      color:white;
+    }
+
+    .btn-card{background:var(--blue)}
+    .btn-ach{background:var(--green)}
+
+    .btn:hover{opacity:.92}
+
+    .disclaimer{
+      margin-top:24px;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .ack{
+      margin-top:14px;
+      background:#e6f7ef;
+      border:1px solid #16a34a;
+      padding:14px;
+      border-radius:10px;
+      font-weight:700;
+      color:#065f46;
+    }
+
+    footer{
+      margin-top:24px;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <h1>Quarterly HOA Dues – Secure Online Payment</h1>
+    <p class="sub">Choose your preferred method below.</p>
+
+    <section class="notice">
+      <p><strong>Important Notice:</strong> The HOA dues are $750.00. Any amount above this covers third-party processing fees charged by Stripe and card networks.</p>
+      <p><strong>Debit cards are not accepted</strong> for online payment. Please use a credit card or bank (ACH).</p>
+      <p><strong>Pay by check with no fee:</strong> Make checks payable to Lake Place HOA and mail to 116 Lake Place Condo Dr, Elizabethtown, NC 28337.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Pay by Credit Card</h2>
+        <div class="price">$772.71</div>
+        <p class="desc">Amount includes processing fees so the HOA nets $750.00.</p>
+        <a class="btn btn-card" href="https://buy.stripe.com/fZu6oH5Gu4hG5hYaxk6J202" target="_blank" rel="noopener">
+          Pay $772.71 by Credit Card →
+        </a>
+      </article>
+
+      <article class="card">
+        <h2>Pay by Bank (ACH)</h2>
+        <div class="price">$755.00</div>
+        <p class="desc">Lower-cost option. ACH fees are capped so the HOA nets $750.00.</p>
+        <a class="btn btn-ach" href="https://buy.stripe.com/7sI7tn3Ck34g0Du7st" target="_blank" rel="noopener">
+          Pay $755.00 by Bank (ACH) →
+        </a>
+      </article>
+    </section>
+
+    <section class="disclaimer">
+      <p><strong>Fee Transparency:</strong> Additional funds collected through online payment links represent third-party processing fees remitted to Stripe and card networks. These fees are not income to the HOA.</p>
+      <p class="ack">By proceeding, you acknowledge and agree with the fee transparency statement and will be redirected to Stripe’s secure payment portal.</p>
+      <p>Questions? Email <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a>.</p>
+    </section>
+
+    <footer>© <span id="yr"></span> Lake Place HOA</footer>
+  </main>
+
+  <script>
+    document.getElementById('yr').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
