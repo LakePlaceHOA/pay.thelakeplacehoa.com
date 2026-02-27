@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lake Place HOA — Special Assessment Payments</title>
+  <meta name="description" content="Pay your Decks & Railings Special Assessment online via Credit Card or ACH." />
+
+  <style>
+    :root{
+      --bg:#f3f6fa;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+
+      /* soothing HOA palette */
+      --primary:#1d4ed8;   /* calm blue */
+      --primary2:#0ea5e9;  /* sky accent */
+      --success:#16a34a;   /* green */
+      --ring:#93c5fd;
+
+      --notice:#eef4ff;
+      --shadow:0 8px 18px rgba(0,0,0,.06);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: var(--bg);
+      padding: 44px 18px 30px;
+      display:flex;
+      justify-content:center;
+    }
+
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{width:100%;max-width:1050px}
+
+    /* Header */
+    .top{margin-bottom:18px}
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .logo{
+      width:46px;height:46px;
+      border-radius:14px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      color:#fff;
+      box-shadow: var(--shadow);
+      flex:0 0 auto;
+      font-size:20px;
+    }
+
+    h1{margin:0;font-size:28px;letter-spacing:-.2px}
+    .subtitle{margin:6px 0 0;color:var(--muted);line-height:1.35}
+
+    .chiprow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:#334155;
+      font-size:13px;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .chip a{color:#0f172a;text-decoration:underline}
+
+    /* Notice */
+    .notice{
+      background: var(--notice);
+      border:1px solid #c7d7ff;
+      border-left:4px solid var(--primary);
+      border-radius:14px;
+      padding:16px 16px;
+      margin:18px 0 22px;
+      line-height:1.55;
+      box-shadow: 0 4px 10px rgba(29,78,216,.06);
+    }
+    .notice p{margin:0 0 10px}
+    .notice p:last-child{margin-bottom:0}
+
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    @media(min-width:920px){
+      .grid{grid-template-columns: 1fr 1fr}
+    }
+
+    .panel{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow: var(--shadow);
+    }
+
+    .tag{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      color:#0f172a;
+      margin-bottom:10px;
+      font-size:14px;
+    }
+    .tag span{color:var(--muted);font-weight:500}
+
+    h2{
+      margin:4px 0 6px;
+      font-size:20px;
+      letter-spacing:-.1px;
+    }
+    p{margin:0 0 10px;color:#334155;line-height:1.55}
+
+    /* Buttons */
+    .btn{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      width:100%;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:800;
+      margin-top:12px;
+      border:1px solid transparent;
+      color:white;
+      box-shadow: 0 6px 14px rgba(0,0,0,.06);
+      transition: transform .05s ease, opacity .15s ease, box-shadow .15s ease;
+    }
+    .btn span small{
+      font-weight:700;
+      opacity:.9;
+      margin-left:6px;
+    }
+    .btn .right{font-weight:900}
+
+    .btn:focus{outline:none}
+    .btn:focus-visible{
+      box-shadow: 0 0 0 4px rgba(147,197,253,.7), 0 6px 14px rgba(0,0,0,.08);
+      border-color: rgba(147,197,253,.9);
+    }
+    .btn:hover{opacity:.95; text-decoration:none}
+    .btn:active{transform: translateY(1px)}
+
+    .btn-blue{background:var(--primary)}
+    .btn-green{background:var(--success)}
+
+    /* Fineprint + footer */
+    .fineprint{
+      margin-top:22px;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .footer{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      padding:10px 4px 0;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  </style>
+</head>
+
+<body>
+  <main class="wrap" role="main">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🏘️</div>
+        <div>
+          <h1>Decks &amp; Railings Special Assessment</h1>
+          <div class="subtitle">
+            Choose your payment method below. You will be redirected to Stripe’s secure checkout.
+          </div>
+
+          <div class="chiprow" aria-label="Helpful notes">
+            <div class="chip">Unit number required at checkout</div>
+            <div class="chip">Debit/prepaid cards not accepted online</div>
+            <div class="chip">Need help? <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="notice" aria-label="Fee transparency notice">
+      <p><strong>Fee Transparency:</strong> Any amount above the HOA’s intended net amount covers <strong>third-party processing fees</strong> charged by Stripe and/or payment networks. These processing fees are not retained by Lake Place HOA.</p>
+      <p><strong>Debit/prepaid cards are not accepted online.</strong> Please use a credit card, ACH, or check.</p>
+      <p><strong>Pay by check with no fee:</strong> Make checks payable to <strong>Lake Place HOA</strong> and mail to <em>116 Lake Place Condo Dr, Elizabethtown, NC 28337</em>.</p>
+    </section>
+
+    <section class="grid" aria-label="Payment options">
+      <!-- CREDIT CARD COLUMN -->
+      <article class="panel" aria-label="Credit card payments">
+        <div class="tag">💳 <strong>Credit Card</strong> <span>(fees included)</span></div>
+        <h2>Pay by Credit Card</h2>
+        <p>These amounts are set so the HOA receives the intended net amount after Stripe card fees.</p>
+
+        <a class="btn btn-blue" href="https://buy.stripe.com/eVq9AT6Ky15u7q67l86J205" target="_blank" rel="noopener">
+          <span>Down Payment <small>(Credit Card)</small></span>
+          <span class="right">$1,756.11 →</span>
+        </a>
+
+        <a class="btn btn-blue" href="https://buy.stripe.com/6oUcN5b0O9C08ua34S6J207" target="_blank" rel="noopener">
+          <span>Installment Payment <small>(Credit Card)</small></span>
+          <span class="right">$2,006.74 →</span>
+        </a>
+
+        <a class="btn btn-blue" href="https://buy.stripe.com/bJedR95Gug0o9ye20O6J206" target="_blank" rel="noopener">
+          <span>Full Payment <small>(Credit Card)</small></span>
+          <span class="right">$7,775.39 →</span>
+        </a>
+
+        <p style="margin-top:12px;">
+          <strong>Reminder:</strong> Debit and prepaid cards are blocked. If you try one, the payment will fail after clicking Pay.
+        </p>
+      </article>
+
+      <!-- ACH COLUMN -->
+      <article class="panel" aria-label="ACH payments">
+        <div class="tag">🏦 <strong>Bank (ACH)</strong> <span>(lower processing cost)</span></div>
+        <h2>Pay by Bank Transfer (ACH)</h2>
+        <p>ACH has a lower processing cost and may take a few business days to fully settle.</p>
+
+        <a class="btn btn-green" href="https://buy.stripe.com/dRmdR96Ky5lKaCi5d06J208" target="_blank" rel="noopener">
+          <span>Down Payment <small>(ACH)</small></span>
+          <span class="right">$1,709.88 →</span>
+        </a>
+
+        <a class="btn btn-green" href="https://buy.stripe.com/6oU14nb0O8xWdOu8pc6J20a" target="_blank" rel="noopener">
+          <span>Installment Payment <small>(ACH)</small></span>
+          <span class="right">$1,953.24 →</span>
+        </a>
+
+        <a class="btn btn-green" href="https://buy.stripe.com/aFa9ATd8W5lK25M0WK6J209" target="_blank" rel="noopener">
+          <span>Full Payment <small>(ACH)</small></span>
+          <span class="right">$7,554.60 →</span>
+        </a>
+
+        <p style="margin-top:12px;">
+          <strong>Tip:</strong> If a homeowner wants “no fee,” paying by check is always available.
+        </p>
+      </article>
+    </section>
+
+    <section class="fineprint" aria-label="Acknowledgement">
+      <div><strong>By proceeding, you acknowledge and agree with the fee transparency statement above and will be redirected to Stripe’s secure payment portal to process your payment.</strong></div>
+      <div style="margin-top:10px;">
+        Questions or corrections? Email <a href="mailto:shaundoyle79@gmail.com">shaundoyle79@gmail.com</a>.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="yr"></span> Lake Place HOA</div>
+      <div class="mono">Powered by Stripe Checkout</div>
+    </footer>
+
+    <script>
+      document.getElementById('yr').textContent = new Date().getFullYear();
+    </script>
+  </main>
+</body>
+</html>
