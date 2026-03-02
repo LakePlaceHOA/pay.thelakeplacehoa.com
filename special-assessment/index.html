@@ -183,13 +183,18 @@
     }
 
     .panel{
-  background:#ffffff;
-  border:1px solid rgba(229,231,235,.9);
-  border-radius:16px;
-  padding:20px;
-  box-shadow:none;
+  background: transparent;      
+  border: 0;                    
+  box-shadow: none;            
+  padding: 16px 0;              
 }
-
+@media(min-width:920px){
+  .panel + .panel{
+    border-left: 1px solid rgba(229,231,235,.8);
+    padding-left: 22px;
+    margin-left: 6px;
+  }
+}
     .tag{
       display:flex;
       align-items:baseline;
